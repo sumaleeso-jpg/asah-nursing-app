@@ -2,1814 +2,838 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>aSAH Transfer Nursing | Srinagarind Hospital</title>
 
 <style>
 *{box-sizing:border-box}
-
 :root{
- --navy:#075985;
- --blue:#087ea4;
- --light:#eef7fb;
- --green:#16834b;
- --greenbg:#e8f7ee;
- --orange:#c66a05;
- --orangebg:#fff2df;
- --red:#c62828;
- --redbg:#fff0f0;
- --gray:#64748b;
+ --blue:#075f7e;--blue2:#0785a8;--light:#eef6f9;
+ --green:#16834b;--greenbg:#e7f7ed;
+ --orange:#d2770b;--orangebg:#fff3df;
+ --red:#c62828;--redbg:#fff0f0;
+ --gray:#607681;--purple:#6435a5
 }
-
 body{
- margin:0;
- font-family:Tahoma,"Noto Sans Thai",Arial,sans-serif;
- background:#eef4f7;
- color:#17324d;
- font-size:16px;
+ margin:0;font-family:Tahoma,"Noto Sans Thai",Arial,sans-serif;
+ background:#edf4f7;color:#18384a;font-size:16px
 }
-
-/* HEADER */
-
-.header{
- background:linear-gradient(135deg,#064d70,#087ea4);
- color:white;
- padding:15px;
+header{
+ background:linear-gradient(135deg,#064e6a,#0785a8);
+ color:#fff;padding:13px
 }
-
-.header-inner{
- max-width:900px;
- margin:auto;
- display:flex;
- align-items:center;
- gap:13px;
+.head{
+ max-width:980px;margin:auto;display:flex;align-items:center;gap:13px
 }
-
 .logo{
- width:66px;
- height:66px;
- border-radius:50%;
- background:white;
- color:#075985;
- display:flex;
- align-items:center;
- justify-content:center;
- text-align:center;
- font-weight:bold;
- font-size:11px;
- flex:none;
- border:3px solid rgba(255,255,255,.5);
+ width:76px;height:76px;object-fit:contain;background:white;
+ border-radius:50%;padding:4px;flex:none
 }
+header h1{margin:0;font-size:21px}
+header p{margin:4px 0 0;line-height:1.45;font-size:13px}
 
-.header h1{
- margin:0;
- font-size:21px;
-}
-
-.header p{
- margin:4px 0 0;
- font-size:13px;
- line-height:1.5;
-}
-
-/* PROGRESS */
-
-.progress-wrap{
- background:white;
- border-bottom:1px solid #d8e3e8;
-}
-
+.progressWrap{background:#fff;border-bottom:1px solid #d4e0e5}
 .progress{
- max-width:900px;
- margin:auto;
- padding:11px;
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:6px;
+ max-width:980px;margin:auto;padding:9px;
+ display:grid;grid-template-columns:repeat(3,1fr);gap:6px
 }
-
 .step{
- padding:10px 4px;
- text-align:center;
- border-radius:10px;
- background:#e4ebef;
- color:#637681;
- font-size:13px;
- font-weight:bold;
+ text-align:center;padding:10px 3px;border-radius:9px;
+ background:#e6ecef;color:#657983;font-weight:bold;font-size:13px
 }
+.step.active{background:var(--blue2);color:#fff}
+.step.done{background:#dcf4e5;color:#12663a}
 
-.step.active{
- background:#087ea4;
- color:white;
-}
-
-.step.done{
- background:#dff4e7;
- color:#146b3a;
-}
-
-/* BODY */
-
-.container{
- max-width:900px;
- margin:auto;
- padding:12px;
-}
-
-.phase{display:none}
-.phase.active{display:block}
-
+.container{max-width:980px;margin:auto;padding:11px}
+.page{display:none}.page.active{display:block}
 .card{
- background:white;
- border-radius:14px;
- padding:16px;
- margin-bottom:12px;
- box-shadow:0 2px 7px rgba(0,0,0,.07);
+ background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;
+ box-shadow:0 2px 7px rgba(0,0,0,.07)
 }
-
-h2{
- margin:0 0 5px;
- color:#075985;
- font-size:21px;
-}
-
+h2{margin:0 0 6px;color:var(--blue);font-size:21px}
 h3{
- color:#086b8c;
- margin:18px 0 8px;
- font-size:17px;
- border-bottom:1px solid #dce7eb;
- padding-bottom:7px;
+ color:#08708e;font-size:17px;margin:17px 0 8px;
+ border-bottom:1px solid #dce7eb;padding-bottom:7px
 }
-
-.subtitle{
- color:#637985;
- font-size:13px;
- margin-bottom:12px;
-}
-
-/* FORM */
-
-.grid2{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:9px;
-}
-
-.grid3{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:7px;
-}
-
-label{
- display:block;
- font-weight:bold;
- margin:7px 0 5px;
-}
-
+.small{font-size:12px;color:#647984;line-height:1.55}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+label.title{display:block;font-weight:bold;margin:8px 0 5px}
 input,select,textarea{
- width:100%;
- border:1px solid #b8cad3;
- border-radius:9px;
- padding:11px;
- font-size:16px;
- background:white;
+ width:100%;padding:10px;border:1px solid #b8cbd3;
+ border-radius:9px;background:#fff;font-size:15px
 }
-
-textarea{min-height:75px}
-
-/* CLICK OPTIONS */
+textarea{min-height:65px}
 
 .option{
- display:flex;
- align-items:flex-start;
- gap:10px;
- padding:11px 5px;
- border-bottom:1px solid #edf1f3;
- cursor:pointer;
+ display:flex;gap:10px;align-items:flex-start;
+ padding:10px 4px;border-bottom:1px solid #edf1f3;cursor:pointer
 }
-
 .option input{
- width:23px;
- height:23px;
- flex:none;
- margin-top:1px;
- accent-color:#087ea4;
+ width:23px;height:23px;flex:none;margin-top:1px;accent-color:var(--blue2)
 }
+.option span{line-height:1.5}
 
-.option span{
- line-height:1.5;
+.detail{
+ display:none;background:#f5fafc;border-radius:10px;
+ padding:11px;margin:5px 0 10px 32px
 }
+.detail.show{display:block}
 
-.quick-grid{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:8px;
+.choiceGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0}
+.choice label{
+ display:block;text-align:center;padding:11px 5px;margin:0;
+ border:2px solid #cbd8dd;border-radius:9px;cursor:pointer
 }
-
-.quick{
- position:relative;
+.choice input:checked+label{
+ border-color:var(--blue2);background:#e2f3f8;color:#075c79;font-weight:bold
 }
-
-.quick input{
- position:absolute;
- opacity:0;
-}
-
-.quick label{
- margin:0;
- display:block;
- text-align:center;
- padding:12px 6px;
- border:2px solid #c9d7dd;
- border-radius:10px;
- cursor:pointer;
- background:white;
-}
-
-.quick input:checked + label{
- background:#dff2f8;
- border-color:#087ea4;
- color:#075985;
- font-weight:bold;
-}
-
-/* RESULTS */
 
 .result{
- border-radius:12px;
- padding:14px;
- margin-top:12px;
- line-height:1.6;
- font-weight:bold;
+ padding:14px;border-radius:11px;margin-top:10px;
+ font-weight:bold;line-height:1.6
 }
-
-.info{
- background:#e7f4f8;
- border-left:6px solid var(--blue);
-}
-
-.green{
- background:var(--greenbg);
- border-left:6px solid var(--green);
- color:#145f36;
-}
-
-.orange{
- background:var(--orangebg);
- border-left:6px solid #e08619;
- color:#804500;
-}
-
-.red{
- background:var(--redbg);
- border:2px solid var(--red);
- color:#8c1818;
-}
-
+.info{background:#e5f3f8;border-left:6px solid var(--blue2)}
+.green{background:var(--greenbg);border-left:6px solid var(--green);color:#155f37}
+.orange{background:var(--orangebg);border-left:6px solid var(--orange);color:#7b4700}
+.red{background:var(--redbg);border:2px solid var(--red);color:#8d1717}
 .hidden{display:none!important}
 
-/* BUTTON */
-
 .btn{
- width:100%;
- border:0;
- border-radius:11px;
- padding:14px;
- margin-top:9px;
- font-size:17px;
- font-weight:bold;
- cursor:pointer;
+ width:100%;border:0;border-radius:10px;padding:13px;
+ margin-top:8px;font-size:16px;font-weight:bold;cursor:pointer
+}
+.primary{background:var(--blue2);color:white}
+.secondary{background:#e4edf1;color:#34505d}
+.print{background:#455a64;color:white}
+.danger{background:var(--red);color:white;font-size:18px}
+.finish{background:var(--green);color:white;font-size:18px}
+.add{background:#e4f4f8;color:#075e7c;border:2px dashed #0785a8}
+.navBottom{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+
+.guide{display:none}.guide.show{display:block}
+.guideItem{
+ padding:10px;border-left:4px solid var(--blue2);
+ background:#f5fafc;margin:6px 0;border-radius:7px
 }
 
-.primary{
- background:#087ea4;
- color:white;
+.call{
+ display:block;text-decoration:none;text-align:center;
+ background:var(--red);color:white;border-radius:11px;
+ padding:15px;font-size:20px;font-weight:bold;margin:10px 0
 }
 
-.next{
- background:#087ea4;
- color:white;
- font-size:18px;
+.tableWrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:820px}
+th,td{border:1px solid #cbd8dd;padding:5px;text-align:center}
+th{background:#e9f3f7;font-size:12px}
+td input,td select{padding:7px;font-size:13px}
+
+.adminBtn{
+ border:0;background:none;color:#81919a;font-size:12px;
+ cursor:pointer;margin:18px
 }
-
-.back{
- background:#e2e8ec;
- color:#334d5a;
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stat{
+ text-align:center;background:#f5f2fb;border-radius:11px;padding:14px
 }
+.stat b{display:block;font-size:27px;color:var(--purple)}
 
-.print{
- background:#455a64;
- color:white;
-}
-
-.emergency{
- background:#c62828;
- color:white;
- font-size:19px;
- padding:16px;
-}
-
-.finish{
- background:#16834b;
- color:white;
- font-size:18px;
-}
-
-.bottom-nav{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:8px;
- margin-top:14px;
-}
-
-/* TIMER RECORD */
-
-.monitor-table{
- width:100%;
- border-collapse:collapse;
-}
-
-.monitor-table th,
-.monitor-table td{
- border:1px solid #cad7dc;
- padding:6px;
- text-align:center;
-}
-
-.monitor-table th{
- background:#e9f3f7;
- font-size:13px;
-}
-
-.monitor-table input,
-.monitor-table select{
- padding:7px;
- font-size:14px;
-}
-
-/* RED FLAGS */
-
-.red-option{
- background:#fffafa;
-}
-
-.red-option input{
- accent-color:#c62828;
-}
-
-/* STATUS */
-
-.statusbar{
- padding:10px;
- background:#f8fafb;
- border-radius:9px;
- margin-top:10px;
- font-size:13px;
- text-align:center;
- color:#586c76;
-}
-
-/* PRINT */
-
-.print-title{display:none}
+.printTitle{display:none}
 
 @media(max-width:600px){
-
  body{font-size:15px}
-
- .header h1{font-size:18px}
-
- .logo{
-  width:56px;
-  height:56px;
- }
-
+ .logo{width:60px;height:60px}
+ header h1{font-size:17px}
  .grid2{grid-template-columns:1fr}
-
- .progress{
-  padding:7px;
- }
-
- .step{
-  font-size:11px;
-  padding:9px 2px;
- }
-
- .container{padding:8px}
-
- .card{padding:13px}
-
+ .choiceGrid{grid-template-columns:1fr 1fr}
+ .stats{grid-template-columns:1fr 1fr}
+ .container{padding:7px}.card{padding:13px}
+ .step{font-size:11px;padding:8px 2px}
 }
 
 @media print{
-
- body{
-  background:white;
-  font-size:11px;
- }
-
- .header,
- .progress-wrap,
- .no-print{
-  display:none!important;
- }
-
- .phase{
-  display:none!important;
- }
-
- .phase.printing{
-  display:block!important;
- }
-
- .card{
-  box-shadow:none;
-  border:1px solid #bbb;
-  page-break-inside:avoid;
- }
-
- .print-title{
-  display:block;
-  text-align:center;
-  margin-bottom:12px;
- }
-
- input,select,textarea{
-  border:1px solid #777;
-  padding:5px;
- }
-
- .option{
-  padding:5px;
- }
-
+ body{background:white;font-size:11px}
+ header,.progressWrap,.noPrint{display:none!important}
+ .page{display:none!important}
+ .page.printing{display:block!important}
+ .card{box-shadow:none;border:1px solid #bbb;page-break-inside:avoid}
+ .printTitle{display:block;text-align:center;margin-bottom:10px}
+ input,select,textarea{border:1px solid #777;padding:4px}
+ table{min-width:0}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<header>
+ <div class="head">
+  <img src="MED_KKU.svg.webp" class="logo" alt="ตราคณะแพทยศาสตร์ มหาวิทยาลัยขอนแก่น">
+  <div>
+   <h1>ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน</h1>
+   <p>โรงพยาบาลศรีนครินทร์ คณะแพทยศาสตร์ มหาวิทยาลัยขอนแก่น<br>
+   <b>aSAH Interhospital Transfer Nursing Care</b></p>
+  </div>
+ </div>
+</header>
 
-<div class="header">
-
-<div class="header-inner">
-
-<div class="logo">
-ตรา<br>
-รพ.ศรีนครินทร์
+<div class="progressWrap noPrint">
+ <div class="progress">
+  <div id="s1" class="step active">① ก่อนส่งต่อ</div>
+  <div id="s2" class="step">② ระหว่างส่งต่อ</div>
+  <div id="s3" class="step">③ Arrival ER</div>
+ </div>
 </div>
-
-<div>
-
-<h1>
-ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน
-</h1>
-
-<p>
-โรงพยาบาลศรีนครินทร์ คณะแพทยศาสตร์ มหาวิทยาลัยขอนแก่น<br>
-<b>aSAH Interhospital Transfer Nursing Care</b>
-</p>
-
-</div>
-
-</div>
-</div>
-
-
-<!-- PROGRESS -->
-
-<div class="progress-wrap">
-
-<div class="progress">
-
-<div id="step1" class="step active">
-① ก่อนส่งต่อ
-</div>
-
-<div id="step2" class="step">
-② ระหว่างส่งต่อ
-</div>
-
-<div id="step3" class="step">
-③ Arrival ER
-</div>
-
-</div>
-</div>
-
 
 <div class="container">
 
+<!-- ========================= PHASE 1 ========================= -->
 
-<!-- ================================================= -->
-<!-- PHASE 1 -->
-<!-- ================================================= -->
+<section id="page1" class="page active">
 
-<section id="phase1" class="phase active">
-
-<div class="print-title">
-<h2>ระยะที่ 1 ก่อนส่งต่อ</h2>
-ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน โรงพยาบาลศรีนครินทร์
+<div class="printTitle">
+ <h2>ระยะที่ 1 ก่อนส่งต่อ</h2>
+ ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน โรงพยาบาลศรีนครินทร์
 </div>
-
 
 <div class="card">
+ <h2>ระยะที่ 1 : รับข้อมูลและเตรียมก่อนส่งต่อ</h2>
+ <div class="small">Pre-transfer Assessment & Preparation</div>
 
-<h2>ระยะที่ 1 : ก่อนส่งต่อ</h2>
-
-<div class="subtitle">
-Pre-transfer Assessment & Preparation
+ <div class="grid2">
+  <div>
+   <label class="title">รหัสผู้ป่วย/เลขที่เคส</label>
+   <input id="caseId" placeholder="ใช้รหัสแทนชื่อสำหรับการทดสอบ">
+  </div>
+  <div>
+   <label class="title">โรงพยาบาลต้นทาง</label>
+   <input id="origin">
+  </div>
+  <div>
+   <label class="title">เวลารับประสาน</label>
+   <input type="time">
+  </div>
+  <div>
+   <label class="title">ETA</label>
+   <input type="time">
+  </div>
+ </div>
 </div>
-
-
-<div class="grid2">
-
-<div>
-<label>HN / Patient ID</label>
-<input id="hn" placeholder="กรอกเฉพาะที่จำเป็น">
-</div>
-
-<div>
-<label>โรงพยาบาลต้นทาง</label>
-<input id="hospital">
-</div>
-
-</div>
-
-
-<h3>Neurological Baseline</h3>
-
-<label>GCS — แตะเลือก</label>
-
-<div class="grid3">
-
-<select id="E" onchange="calculate()">
-<option value="">Eye</option>
-<option value="4">E4</option>
-<option value="3">E3</option>
-<option value="2">E2</option>
-<option value="1">E1</option>
-</select>
-
-<select id="V" onchange="calculate()">
-<option value="">Verbal</option>
-<option value="5">V5</option>
-<option value="4">V4</option>
-<option value="3">V3</option>
-<option value="2">V2</option>
-<option value="1">V1</option>
-</select>
-
-<select id="M" onchange="calculate()">
-<option value="">Motor</option>
-<option value="6">M6</option>
-<option value="5">M5</option>
-<option value="4">M4</option>
-<option value="3">M3</option>
-<option value="2">M2</option>
-<option value="1">M1</option>
-</select>
-
-</div>
-
-
-<label>Pupil</label>
-
-<div class="quick-grid">
-
-<div class="quick">
-<input type="radio" name="pupil" id="p1" checked>
-<label for="p1">✓ Equal / Reactive</label>
-</div>
-
-<div class="quick">
-<input type="radio" name="pupil" id="p2">
-<label for="p2">⚠ ผิดปกติ</label>
-</div>
-
-</div>
-
-
-<label>Motor deficit</label>
-
-<div class="quick-grid">
-
-<div class="quick">
-<input type="radio"
-name="motor"
-id="mNo"
-value="no"
-checked
-onchange="calculate()">
-
-<label for="mNo">ไม่มี</label>
-</div>
-
-<div class="quick">
-<input type="radio"
-name="motor"
-id="mYes"
-value="yes"
-onchange="calculate()">
-
-<label for="mYes">มี</label>
-</div>
-
-</div>
-
-
-<label>Clinical condition</label>
-
-<div class="quick-grid">
-
-<div class="quick">
-
-<input type="radio"
-name="condition"
-id="stable"
-value="stable"
-checked
-onchange="calculate()">
-
-<label for="stable">
-✓ Stable
-</label>
-
-</div>
-
-<div class="quick">
-
-<input type="radio"
-name="condition"
-id="unstable"
-value="unstable"
-onchange="calculate()">
-
-<label for="unstable">
-⚠ Unstable / ทรุด
-</label>
-
-</div>
-
-</div>
-
-
-<div id="classification"
-class="result info">
-
-เลือก E + V + M เพื่อประเมิน GCS / WFNS
-
-</div>
-
-</div>
-
-
-<!-- DATA -->
 
 <div class="card">
+ <h3>1. Neurological Baseline</h3>
 
-<h3>ข้อมูลสำคัญจากต้นทาง</h3>
+ <label class="title">GCS — เลือก E / V / M</label>
+ <div class="grid3">
+  <select id="E" onchange="classify()">
+   <option value="">E</option><option value="4">E4</option>
+   <option value="3">E3</option><option value="2">E2</option><option value="1">E1</option>
+  </select>
+  <select id="V" onchange="classify()">
+   <option value="">V</option><option value="5">V5</option>
+   <option value="4">V4</option><option value="3">V3</option>
+   <option value="2">V2</option><option value="1">V1</option>
+  </select>
+  <select id="M" onchange="classify()">
+   <option value="">M</option><option value="6">M6</option>
+   <option value="5">M5</option><option value="4">M4</option>
+   <option value="3">M3</option><option value="2">M2</option><option value="1">M1</option>
+  </select>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>GCS E–V–M</span>
-</label>
+ <label class="title">Motor deficit</label>
+ <div class="choiceGrid">
+  <div class="choice">
+   <input type="radio" name="motor" id="motorNo" value="no" checked onchange="classify()">
+   <label for="motorNo">✓ ไม่มี</label>
+  </div>
+  <div class="choice">
+   <input type="radio" name="motor" id="motorYes" value="yes" onchange="classify()">
+   <label for="motorYes">⚠ มี</label>
+  </div>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>Pupil + Motor</span>
-</label>
+ <label class="title">Clinical condition</label>
+ <div class="choiceGrid">
+  <div class="choice">
+   <input type="radio" name="condition" id="stable" value="stable" checked onchange="classify()">
+   <label for="stable">✓ Stable</label>
+  </div>
+  <div class="choice">
+   <input type="radio" name="condition" id="unstable" value="unstable" onchange="classify()">
+   <label for="unstable">⚠ Unstable / ทรุด</label>
+  </div>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>BP / HR / RR / SpO₂</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Airway / O₂ / Ventilator</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>IV access + ยา + สารน้ำ</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>EVD / Ventriculostomy (ถ้ามี)</span>
-</label>
-
+ <div id="classResult" class="result info">
+  เลือก E + V + M เพื่อประเมิน GCS / WFNS / กลุ่มการดูแล
+ </div>
 </div>
-
-
-<!-- READY -->
 
 <div class="card">
+ <h3>2. ข้อมูลที่ขอจากโรงพยาบาลต้นทาง</h3>
 
-<h3>ความพร้อมก่อนออกเดินทาง</h3>
+ <label class="option">
+  <input type="checkbox" onchange="detail(this,'dNeuro')">
+  <span><b>Neurological status</b> — GCS / Pupil / Motor</span>
+ </label>
+ <div id="dNeuro" class="detail">
+  <label class="title">Pupil</label>
+  <select>
+   <option>Equal / Reactive</option><option>Unequal</option>
+   <option>Sluggish</option><option>Non-reactive</option><option>ประเมินไม่ได้</option>
+  </select>
+  <label class="title">Motor</label>
+  <select>
+   <option>ไม่มี Motor deficit</option><option>มี Motor deficit</option>
+   <option>Motor deficit แย่ลง</option>
+  </select>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>Airway / Breathing พร้อม</span>
-</label>
+ <label class="option">
+  <input type="checkbox" onchange="detail(this,'dVital')">
+  <span><b>Vital signs</b> — BP / HR / RR / SpO₂</span>
+ </label>
+ <div id="dVital" class="detail">
+  <div class="grid2">
+   <input placeholder="BP เช่น 145/85">
+   <input type="number" placeholder="HR /min">
+   <input type="number" placeholder="RR /min">
+   <input type="number" placeholder="SpO₂ %">
+  </div>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>O₂ พร้อม</span>
-</label>
+ <label class="option">
+  <input type="checkbox" onchange="detail(this,'dAirway')">
+  <span><b>Airway / Breathing / Oxygen</b></span>
+ </label>
+ <div id="dAirway" class="detail">
+  <select>
+   <option>หายใจเอง / Room air</option><option>O₂ cannula</option>
+   <option>O₂ mask</option><option>ET tube</option><option>Mechanical ventilator</option>
+  </select>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>IV พร้อม</span>
-</label>
+ <label class="option">
+  <input type="checkbox" onchange="detail(this,'dIV')">
+  <span><b>IV / Fluid / Medication</b></span>
+ </label>
+ <div id="dIV" class="detail">
+  <select><option>IV patent</option><option>IV มีปัญหา</option><option>มากกว่า 1 เส้น</option></select>
+  <label class="title">ยา/สารน้ำที่ได้รับ</label>
+  <textarea placeholder="บันทึกเฉพาะรายละเอียดที่จำเป็น"></textarea>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>Monitor BP / SpO₂ พร้อม</span>
-</label>
+ <label class="option">
+  <input type="checkbox" onchange="detail(this,'dEVD')">
+  <span><b>EVD / Ventriculostomy</b></span>
+ </label>
+ <div id="dEVD" class="detail">
+  <select>
+   <option>ไม่มี EVD</option><option>มี EVD / ระบบปกติ</option>
+   <option>มี EVD / ต้องเฝ้าระวัง</option>
+  </select>
+  <label class="title">รายละเอียด/ระดับตามแผนการรักษา</label>
+  <input>
+ </div>
 
-<label class="option">
-<input type="checkbox">
-<span>Suction พร้อม</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>ยา / สารน้ำ / อุปกรณ์ฉุกเฉินพร้อม</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>EVD ปลอดภัย / ตรวจระบบแล้ว (ถ้ามี)</span>
-</label>
-
+ <label class="option">
+  <input type="checkbox" onchange="detail(this,'dSymptom')">
+  <span><b>อาการสำคัญ</b> — ปวดศีรษะ / N/V / Seizure</span>
+ </label>
+ <div id="dSymptom" class="detail">
+  <div class="choiceGrid">
+   <div class="choice"><input type="checkbox" id="headache"><label for="headache">ปวดศีรษะ</label></div>
+   <div class="choice"><input type="checkbox" id="nv"><label for="nv">Nausea/Vomiting</label></div>
+   <div class="choice"><input type="checkbox" id="seizure1"><label for="seizure1">Seizure</label></div>
+   <div class="choice"><input type="checkbox" id="noneSym"><label for="noneSym">ไม่มี</label></div>
+  </div>
+ </div>
 </div>
-
 
 <div class="card">
-
-<h3>การประสานปลายทาง</h3>
-
-<label class="option">
-<input type="checkbox">
-<span>ศูนย์รับ–ส่งต่อรับทราบ</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>ER / ทีมที่เกี่ยวข้องรับทราบ</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-ส่ง Baseline + WFNS + V/S + Treatment + EVD + ETA
-</span>
-</label>
-
+ <h3>3. ความพร้อมก่อนออกเดินทาง</h3>
+ <label class="option"><input type="checkbox"><span>Airway / Breathing พร้อม</span></label>
+ <label class="option"><input type="checkbox"><span>O₂ พร้อม</span></label>
+ <label class="option"><input type="checkbox"><span>IV พร้อมใช้งาน</span></label>
+ <label class="option"><input type="checkbox"><span>BP / SpO₂ monitor พร้อม</span></label>
+ <label class="option"><input type="checkbox"><span>Suction พร้อม</span></label>
+ <label class="option"><input type="checkbox"><span>ยา / สารน้ำ / อุปกรณ์ฉุกเฉินพร้อม</span></label>
+ <label class="option"><input type="checkbox"><span>EVD ตรวจระบบและปลอดภัย (ถ้ามี)</span></label>
 </div>
 
+<div class="card">
+ <h3>4. การประสานปลายทาง</h3>
+ <label class="option"><input type="checkbox"><span>ศูนย์รับส่งต่อรับทราบ</span></label>
+ <label class="option"><input type="checkbox"><span>ER / ทีมที่เกี่ยวข้องรับทราบ</span></label>
+ <label class="option"><input type="checkbox"><span>ส่ง Baseline + WFNS + V/S + Treatment + EVD + ETA</span></label>
+</div>
 
-<button class="btn print no-print"
-onclick="printPhase(1)">
-🖨️ พิมพ์ระยะที่ 1
-</button>
-
-
-<button class="btn next no-print"
-onclick="nextPhase(2)">
-บันทึกและไประยะที่ 2 ➜
-</button>
-
+<button class="btn print noPrint" onclick="printPage(1)">🖨️ พิมพ์ระยะที่ 1</button>
+<button class="btn primary noPrint" onclick="go(2)">บันทึกและไประยะที่ 2 ➜</button>
 </section>
 
+<!-- ========================= PHASE 2 ========================= -->
 
-<!-- ================================================= -->
-<!-- PHASE 2 -->
-<!-- ================================================= -->
+<section id="page2" class="page">
 
-<section id="phase2" class="phase">
-
-<div class="print-title">
-<h2>ระยะที่ 2 ระหว่างการส่งต่อ</h2>
-ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน โรงพยาบาลศรีนครินทร์
+<div class="printTitle">
+ <h2>ระยะที่ 2 ระหว่างการส่งต่อ</h2>
+ ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน โรงพยาบาลศรีนครินทร์
 </div>
-
 
 <div class="card">
-
-<h2>ระยะที่ 2 : ระหว่างส่งต่อ</h2>
-
-<div class="subtitle">
-Interhospital Transfer Care & Monitoring
+ <h2>ระยะที่ 2 : ระหว่างส่งต่อ</h2>
+ <div class="small">Interhospital Transfer Care & Monitoring</div>
+ <div id="groupResult" class="result info">กรุณาประเมินระยะที่ 1 ก่อน</div>
 </div>
 
-<div id="groupResult"
-class="result info">
-
-ข้อมูลกลุ่มการดูแลจะแสดงจากระยะที่ 1
-
+<div class="card noPrint">
+ <button class="btn primary" onclick="toggleGuide()">📖 ดู / ซ่อน แนวทางการดูแลระหว่างเดินทาง</button>
+ <div id="travelGuide" class="guide">
+  <div class="guideItem"><b>1. Neurological</b><br>GCS E–V–M + Pupil + Motor และเปรียบเทียบกับ Baseline</div>
+  <div class="guideItem"><b>2. Airway–Breathing</b><br>Airway, RR, SpO₂ และเฝ้าระวังการหายใจผิดปกติ</div>
+  <div class="guideItem"><b>3. Circulation</b><br>BP + HR และเฝ้าระวัง Circulatory instability</div>
+  <div class="guideItem"><b>4. Pain / Nausea / Vomiting</b><br>ประเมินอาการและเฝ้าระวังการเปลี่ยนแปลงที่อาจสัมพันธ์กับ Rebleeding</div>
+  <div class="guideItem"><b>5. IV / Fluid / Medication</b><br>ตรวจ IV ยาและสารน้ำตามแผนการรักษา</div>
+  <div class="guideItem"><b>6. EVD</b><br>ตรวจระบบหลังเคลื่อนย้าย/เปลี่ยนท่า และเมื่อ Neurological status เปลี่ยน</div>
+  <div class="guideItem"><b>7. Seizure</b><br>เฝ้าระวังอาการชักตลอดการส่งต่อ</div>
+  <div class="guideItem"><b>8. Communication</b><br>พบ Red Flag → ABC + Neuro ซ้ำ → ช่วยเหลือ → แจ้งศูนย์รับส่งต่อทันที</div>
+ </div>
 </div>
 
+<div id="group1" class="card hidden">
+ <div class="result green">
+  🟢 <b>กลุ่มที่ 1 : WFNS I–III + Stable</b><br>
+  ประเมินอย่างน้อยทุก <b>30 นาที</b>
+ </div>
+ <h3>แนวทางดูแลตามกลุ่ม</h3>
+ <label class="option"><input type="checkbox"><span><b>Neuro</b> — GCS E–V–M + Pupil + Motor ทุก 30 นาที</span></label>
+ <label class="option"><input type="checkbox"><span><b>Airway/Breathing</b> — Airway + RR + SpO₂ ทุก 30 นาที</span></label>
+ <label class="option"><input type="checkbox"><span><b>Circulation</b> — BP + HR ทุก 30 นาที</span></label>
+ <label class="option"><input type="checkbox"><span><b>Pain/N/V</b> — ประเมินปวดศีรษะ คลื่นไส้ อาเจียน</span></label>
+ <label class="option"><input type="checkbox"><span>ลดสิ่งกระตุ้น/การเคลื่อนไหวที่ไม่จำเป็น</span></label>
+ <label class="option"><input type="checkbox"><span><b>IV/Fluid/Medication</b> — ตรวจทุก 30 นาที</span></label>
+ <label class="option"><input type="checkbox"><span><b>EVD</b> — ตรวจหลังเคลื่อนย้าย/เปลี่ยนท่า</span></label>
+ <label class="option"><input type="checkbox"><span><b>Seizure</b> — เฝ้าระวังตลอดการส่งต่อ</span></label>
 </div>
 
-
-<!-- GROUP 1 -->
-
-<div id="group1"
-class="card hidden">
-
-<div class="result green">
-
-<b>🟢 กลุ่มที่ 1</b><br>
-WFNS I–III + อาการคงที่<br>
-ประเมินอย่างน้อยทุก <b>30 นาที</b>
-
+<div id="group2" class="card hidden">
+ <div class="result orange">
+  🟠 <b>กลุ่มที่ 2 : WFNS IV–V หรือ Unstable/Deterioration</b><br>
+  ประเมินทุก <b>15 นาทีขณะยังไม่คงที่</b>
+ </div>
+ <h3>แนวทางดูแลเข้มข้น</h3>
+ <label class="option"><input type="checkbox"><span><b>Neuro</b> — GCS E–V–M + Pupil + Motor ทุก 15 นาที</span></label>
+ <label class="option"><input type="checkbox"><span><b>Airway/Breathing</b> — Airway + RR ทุก 15 นาที + SpO₂ ต่อเนื่อง</span></label>
+ <label class="option"><input type="checkbox"><span><b>Circulation</b> — BP ทุก 15 นาที + ECG/HR ต่อเนื่องเมื่อมีอุปกรณ์</span></label>
+ <label class="option"><input type="checkbox"><span><b>Pain/N/V</b> — ทุก 15 นาทีขณะไม่คงที่</span></label>
+ <label class="option"><input type="checkbox"><span><b>IV/Fluid/Medication</b> — ทุก 15 นาทีขณะไม่คงที่</span></label>
+ <label class="option"><input type="checkbox"><span><b>EVD</b> — ตรวจทันทีเมื่อ Neuro เปลี่ยน</span></label>
+ <label class="option"><input type="checkbox"><span><b>Seizure</b> — เฝ้าระวังต่อเนื่อง</span></label>
 </div>
-
-<h3>แนวทางดูแลบนรถ</h3>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>NEURO</b><br>
-GCS E–V–M + Pupil + Motor ทุก 30 นาที
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>AIRWAY / BREATHING</b><br>
-Airway + RR + SpO₂ ทุก 30 นาที
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>CIRCULATION</b><br>
-BP + HR ทุก 30 นาที
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>REBLEEDING / PAIN / N/V</b><br>
-ประเมินปวดศีรษะ คลื่นไส้ อาเจียน
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-ลดสิ่งกระตุ้นและการเคลื่อนไหวที่ไม่จำเป็น
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>IV / FLUID / MEDICATION</b><br>
-ตรวจทุก 30 นาที
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>EVD</b><br>
-ตรวจหลังเคลื่อนย้ายหรือเปลี่ยนท่า
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>SEIZURE</b><br>
-เฝ้าระวังตลอดการส่งต่อ
-</span>
-</label>
-
-</div>
-
-
-<!-- GROUP 2 -->
-
-<div id="group2"
-class="card hidden">
-
-<div class="result orange">
-
-<b>🟠 กลุ่มที่ 2</b><br>
-WFNS IV–V หรือ Unstable / Deterioration<br>
-ประเมินทุก <b>15 นาที</b>
-ขณะอาการยังไม่คงที่
-
-</div>
-
-
-<h3>แนวทางดูแลเข้มข้น</h3>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>NEURO</b><br>
-GCS E–V–M + Pupil + Motor ทุก 15 นาที
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>AIRWAY / BREATHING</b><br>
-Airway + RR ทุก 15 นาที + SpO₂ ต่อเนื่อง
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>CIRCULATION</b><br>
-BP ทุก 15 นาที + ECG/HR ต่อเนื่องเมื่อมีอุปกรณ์
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>PAIN / N/V</b><br>
-ทุก 15 นาทีขณะอาการไม่คงที่
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>IV / FLUID / MEDICATION</b><br>
-ทุก 15 นาทีขณะอาการไม่คงที่
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>EVD</b><br>
-ตรวจทันทีเมื่อ Neurological status เปลี่ยน
-</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-<b>SEIZURE</b><br>
-เฝ้าระวังอาการชักและระดับความรู้สึกตัวต่อเนื่อง
-</span>
-</label>
-
-</div>
-
-
-<!-- MONITOR -->
 
 <div class="card">
-
-<h3>บันทึกติดตามระหว่างส่งต่อ</h3>
-
-<table class="monitor-table">
-
-<tr>
-<th>เวลา</th>
-<th>GCS</th>
-<th>Pupil</th>
-<th>BP</th>
-<th>SpO₂</th>
-</tr>
-
-<tr>
-<td><input type="time"></td>
-
-<td>
-<select>
-<option>15</option>
-<option>14</option>
-<option>13</option>
-<option>12</option>
-<option>11</option>
-<option>10</option>
-<option>9</option>
-<option>8</option>
-<option>7</option>
-<option>6</option>
-<option>5</option>
-<option>4</option>
-<option>3</option>
-</select>
-</td>
-
-<td>
-<select>
-<option>ปกติ</option>
-<option>ผิดปกติ</option>
-</select>
-</td>
-
-<td><input></td>
-
-<td>
-<select>
-<option>≥94%</option>
-<option>&lt;94%</option>
-</select>
-</td>
-
-</tr>
-
-
-<tr>
-
-<td><input type="time"></td>
-
-<td>
-<select>
-<option>15</option>
-<option>14</option>
-<option>13</option>
-<option>12</option>
-<option>11</option>
-<option>10</option>
-<option>9</option>
-<option>8</option>
-<option>7</option>
-<option>6</option>
-<option>5</option>
-<option>4</option>
-<option>3</option>
-</select>
-</td>
-
-<td>
-<select>
-<option>ปกติ</option>
-<option>ผิดปกติ</option>
-</select>
-</td>
-
-<td><input></td>
-
-<td>
-<select>
-<option>≥94%</option>
-<option>&lt;94%</option>
-</select>
-</td>
-
-</tr>
-
-</table>
-
+ <h3>📝 บันทึกติดตามระหว่างส่งต่อ</h3>
+ <div class="tableWrap">
+  <table>
+   <thead>
+    <tr>
+     <th>เวลา</th><th>GCS</th><th>Pupil</th><th>Motor</th>
+     <th>BP</th><th>HR</th><th>RR</th><th>SpO₂</th><th>อาการ</th>
+    </tr>
+   </thead>
+   <tbody id="transferRows"></tbody>
+  </table>
+ </div>
+ <button class="btn add noPrint" onclick="addTransferRow()">＋ เพิ่มการประเมินครั้งถัดไป</button>
 </div>
 
+<button class="btn danger noPrint" onclick="redFlag()">🚨 ผู้ป่วยทรุด / พบ RED FLAG</button>
 
-<!-- RED BUTTON -->
+<div id="redBox" class="card hidden">
+ <div class="result red">
+  <b>🚨 RED FLAGS</b>
+  <label class="option"><input type="checkbox"><span>GCS ลดลงจาก Baseline</span></label>
+  <label class="option"><input type="checkbox"><span>Pupil เปลี่ยน / ไม่เท่ากัน</span></label>
+  <label class="option"><input type="checkbox"><span>Motor deficit ใหม่หรือแย่ลง</span></label>
+  <label class="option"><input type="checkbox"><span>Seizure</span></label>
+  <label class="option"><input type="checkbox"><span>SpO₂ ลดลง / Airway problem</span></label>
+  <label class="option"><input type="checkbox"><span>BP / Circulation unstable</span></label>
+  <label class="option"><input type="checkbox"><span>สงสัย Rebleeding</span></label>
+  <label class="option"><input type="checkbox"><span>สงสัย Acute hydrocephalus</span></label>
+ </div>
 
-<button class="btn emergency no-print"
-onclick="redFlag()">
+ <div class="result red">
+  <b>ดำเนินการทันที</b><br>
+  ① ABC + Neuro ซ้ำทันที<br>
+  ② ให้การช่วยเหลือตามแผนการรักษา<br>
+  ③ <b>แจ้งศูนย์รับส่งต่อทันที</b><br>
+  ④ รายงาน GCS / Pupil / Motor / V/S / EVD<br>
+  ⑤ รายงาน Intervention + Response + ETA<br>
+  ⑥ บันทึกเวลา
+ </div>
 
-🚨 ผู้ป่วยทรุด / พบ RED FLAG
+ <a href="tel:043363455" class="call noPrint">📞 โทรศูนย์รับส่งต่อ 043-363455</a>
 
-</button>
-
-
-<!-- RED BOX -->
-
-<div id="redBox"
-class="card hidden">
-
-<div class="result red">
-
-<h2 style="color:#a71919">
-🚨 RED FLAGS
-</h2>
-
-
-<label class="option red-option">
-<input type="checkbox">
-<span>GCS ลดลงจาก Baseline</span>
-</label>
-
-<label class="option red-option">
-<input type="checkbox">
-<span>Pupil เปลี่ยน / ไม่เท่ากัน</span>
-</label>
-
-<label class="option red-option">
-<input type="checkbox">
-<span>Motor deficit ใหม่หรือแย่ลง</span>
-</label>
-
-<label class="option red-option">
-<input type="checkbox">
-<span>Seizure</span>
-</label>
-
-<label class="option red-option">
-<input type="checkbox">
-<span>SpO₂ ลดลง / Airway problem</span>
-</label>
-
-<label class="option red-option">
-<input type="checkbox">
-<span>BP / Circulation unstable</span>
-</label>
-
-<label class="option red-option">
-<input type="checkbox">
-<span>สงสัย Rebleeding</span>
-</label>
-
-<label class="option red-option">
-<input type="checkbox">
-<span>สงสัย Acute hydrocephalus</span>
-</label>
-
+ <label class="option"><input type="checkbox"><span><b>แจ้งศูนย์รับส่งต่อแล้ว</b></span></label>
+ <label class="option"><input type="checkbox"><span>ประสาน ER / ทีมปลายทางแล้ว</span></label>
+ <label class="option"><input type="checkbox"><span>รายงานอาการเปลี่ยนแปลง + Intervention + Response + ETA แล้ว</span></label>
 </div>
 
-
-<div class="result red">
-
-<b>ดำเนินการทันที</b><br><br>
-
-① ABC + Neuro ซ้ำทันที<br>
-② ให้การช่วยเหลือตามแผนการรักษา<br>
-③ <b>แจ้งศูนย์รับ–ส่งต่อทันที</b><br>
-④ รายงาน GCS / Pupil / Motor / V/S / EVD<br>
-⑤ รายงานการช่วยเหลือและ Response<br>
-⑥ บันทึกเวลา
-
+<div class="navBottom noPrint">
+ <button class="btn secondary" onclick="go(1)">← ระยะที่ 1</button>
+ <button class="btn print" onclick="printPage(2)">🖨️ พิมพ์ระยะที่ 2</button>
 </div>
-
-
-<h3>แจ้งศูนย์รับ–ส่งต่อ</h3>
-
-<div class="quick-grid">
-
-<div class="quick">
-<input type="checkbox"
-id="callcenter">
-<label for="callcenter">
-📞 แจ้งศูนย์รับ–ส่งต่อแล้ว
-</label>
-</div>
-
-<div class="quick">
-<input type="checkbox"
-id="callteam">
-<label for="callteam">
-✓ ประสานทีมปลายทางแล้ว
-</label>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="bottom-nav no-print">
-
-<button class="btn back"
-onclick="nextPhase(1)">
-← ระยะที่ 1
-</button>
-
-<button class="btn print"
-onclick="printPhase(2)">
-🖨️ พิมพ์
-</button>
-
-</div>
-
-
-<button class="btn next no-print"
-onclick="nextPhase(3)">
-บันทึกและไป Arrival ER ➜
-</button>
-
+<button class="btn primary noPrint" onclick="go(3)">บันทึกและไป Arrival ER ➜</button>
 </section>
 
+<!-- ========================= PHASE 3 ========================= -->
 
-<!-- ================================================= -->
-<!-- PHASE 3 -->
-<!-- ================================================= -->
+<section id="page3" class="page">
 
-<section id="phase3" class="phase">
-
-<div class="print-title">
-
-<h2>
-ระยะที่ 3 Arrival Emergency Department
-</h2>
-
-ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน
-โรงพยาบาลศรีนครินทร์
-
+<div class="printTitle">
+ <h2>ระยะที่ 3 Arrival ER</h2>
+ ศูนย์รับส่งต่อผู้ป่วยอุบัติเหตุและฉุกเฉิน โรงพยาบาลศรีนครินทร์
 </div>
-
 
 <div class="card">
+ <h2>ระยะที่ 3 : Arrival ER</h2>
+ <div class="small">Arrival Assessment & Continued Monitoring</div>
 
-<h2>ระยะที่ 3 : Arrival ER</h2>
-
-<div class="subtitle">
-ประเมินซ้ำทันทีเมื่อถึงโรงพยาบาลปลายทาง
+ <h3>ประเมินทันทีเมื่อถึง ER</h3>
+ <label class="option"><input type="checkbox"><span><b>ABCDE</b></span></label>
+ <label class="option"><input type="checkbox"><span>BP / HR / RR / SpO₂</span></label>
+ <label class="option"><input type="checkbox"><span>GCS E–V–M</span></label>
+ <label class="option"><input type="checkbox"><span>Pupil</span></label>
+ <label class="option"><input type="checkbox"><span>Motor deficit</span></label>
+ <label class="option"><input type="checkbox"><span>ประเมิน WFNS ซ้ำ</span></label>
+ <label class="option"><input type="checkbox"><span>เปรียบเทียบ Pre-transfer → Transfer → Arrival ER</span></label>
 </div>
-
-
-<h3>Immediate Assessment</h3>
-
-<label class="option">
-<input type="checkbox">
-<span><b>ABCDE ทันที</b></span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>BP / HR / RR / SpO₂</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>GCS E–V–M</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Pupil</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Motor deficit</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>ประเมิน WFNS ซ้ำ</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>
-เปรียบเทียบ
-Pre-transfer → Transfer → Arrival ER
-</span>
-</label>
-
-</div>
-
 
 <div class="card">
-
-<h3>ประเมินภาวะแทรกซ้อน</h3>
-
-<label class="option">
-<input type="checkbox">
-<span>Neurological deterioration</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Rebleeding</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Seizure</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Hydrocephalus</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>EVD dysfunction</span>
-</label>
-
+ <h3>📝 บันทึกติดตามอาการใน ER</h3>
+ <div class="tableWrap">
+  <table>
+   <thead>
+    <tr>
+     <th>เวลา</th><th>GCS</th><th>Pupil</th><th>Motor</th>
+     <th>BP</th><th>HR</th><th>RR</th><th>SpO₂</th><th>Response</th>
+    </tr>
+   </thead>
+   <tbody id="erRows"></tbody>
+  </table>
+ </div>
+ <button class="btn add noPrint" onclick="addERRow()">＋ เพิ่มการประเมินใน ER</button>
 </div>
-
 
 <div class="card">
-
-<h3>การดูแลต่อเนื่อง</h3>
-
-<label class="option">
-<input type="checkbox">
-<span>Neuro monitoring ตามระดับความรุนแรง</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Airway / Breathing / SpO₂</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>BP / HR / Circulation</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Pain / Nausea / Vomiting</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>IV / Fluid / Medication</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>EVD care</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Seizure monitoring</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>แจ้งแพทย์/Neurosurgery เมื่อพบอาการทรุดลง</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>ให้ข้อมูลผู้ป่วยและครอบครัว</span>
-</label>
-
+ <h3>ภาวะแทรกซ้อนสำคัญ</h3>
+ <label class="option"><input type="checkbox"><span>Neurological deterioration</span></label>
+ <label class="option"><input type="checkbox"><span>Rebleeding</span></label>
+ <label class="option"><input type="checkbox"><span>Seizure</span></label>
+ <label class="option"><input type="checkbox"><span>Hydrocephalus</span></label>
+ <label class="option"><input type="checkbox"><span>EVD dysfunction</span></label>
 </div>
-
 
 <div class="card">
-
-<h3>Handover ก่อนย้ายออกจาก ER</h3>
-
-<label class="option">
-<input type="checkbox">
-<span>GCS E–V–M</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>Pupil + Motor</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>WFNS</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>V/S</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>EVD</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>การรักษาที่ได้รับ</span>
-</label>
-
-<label class="option">
-<input type="checkbox">
-<span>การเปลี่ยนแปลง + Intervention + Response</span>
-</label>
-
+ <h3>การดูแลต่อเนื่องใน ER</h3>
+ <label class="option"><input type="checkbox"><span>Neuro monitoring ตามระดับความรุนแรง</span></label>
+ <label class="option"><input type="checkbox"><span>Airway / Breathing / SpO₂</span></label>
+ <label class="option"><input type="checkbox"><span>BP / HR / Circulation</span></label>
+ <label class="option"><input type="checkbox"><span>Pain / Nausea / Vomiting</span></label>
+ <label class="option"><input type="checkbox"><span>IV / Fluid / Medication</span></label>
+ <label class="option"><input type="checkbox"><span>EVD care</span></label>
+ <label class="option"><input type="checkbox"><span>Seizure monitoring</span></label>
+ <label class="option"><input type="checkbox"><span>แจ้งแพทย์/Neurosurgery เมื่อพบอาการทรุดลง</span></label>
+ <label class="option"><input type="checkbox"><span>ให้ข้อมูลผู้ป่วยและครอบครัว</span></label>
 </div>
 
-
-<div class="bottom-nav no-print">
-
-<button class="btn back"
-onclick="nextPhase(2)">
-← ระยะที่ 2
-</button>
-
-<button class="btn print"
-onclick="printPhase(3)">
-🖨️ พิมพ์ระยะที่ 3
-</button>
-
+<div class="card">
+ <h3>Handover ก่อนย้ายออกจาก ER</h3>
+ <label class="option"><input type="checkbox"><span>GCS E–V–M</span></label>
+ <label class="option"><input type="checkbox"><span>Pupil + Motor</span></label>
+ <label class="option"><input type="checkbox"><span>WFNS</span></label>
+ <label class="option"><input type="checkbox"><span>V/S</span></label>
+ <label class="option"><input type="checkbox"><span>EVD</span></label>
+ <label class="option"><input type="checkbox"><span>การรักษาที่ได้รับ</span></label>
+ <label class="option"><input type="checkbox"><span>Change + Intervention + Response</span></label>
 </div>
 
+<div class="navBottom noPrint">
+ <button class="btn secondary" onclick="go(2)">← ระยะที่ 2</button>
+ <button class="btn print" onclick="printPage(3)">🖨️ พิมพ์ระยะที่ 3</button>
+</div>
 
-<button class="btn finish no-print"
-onclick="printAll()">
-
-✓ เสร็จสิ้นเคส / 🖨️ พิมพ์ทั้งหมด
-
-</button>
-
+<button class="btn finish noPrint" onclick="completeCase()">✓ เสร็จสิ้นเคส + บันทึกสถิติ</button>
+<button class="btn print noPrint" onclick="printAll()">🖨️ พิมพ์ทั้งหมด 3 ระยะ</button>
 </section>
 
+<!-- ========================= ADMIN ========================= -->
 
-<!-- FOOTER -->
+<section id="adminPage" class="page">
+
+<div class="card" style="border-left:6px solid #6435a5">
+ <h2>🔒 Admin Dashboard</h2>
+ <div class="small">การประเมินผลกิจกรรมการพยาบาลและสถิติการใช้งานต้นแบบ</div>
+
+ <div class="stats">
+  <div class="stat"><b id="stTotal">0</b>เคสทั้งหมด</div>
+  <div class="stat"><b id="stG1">0</b>กลุ่ม 1</div>
+  <div class="stat"><b id="stG2">0</b>กลุ่ม 2</div>
+  <div class="stat"><b id="stRed">0</b>Red Flag</div>
+ </div>
+</div>
 
 <div class="card">
+ <h3>การประเมินผลกิจกรรมการพยาบาล</h3>
 
-<div class="statusbar">
+ <label class="option"><input type="checkbox"><span>1. มี Neurological baseline ก่อนส่งต่อครบถ้วน</span></label>
+ <label class="option"><input type="checkbox"><span>2. ประเมิน GCS แยก E–V–M, Pupil และ Motor</span></label>
+ <label class="option"><input type="checkbox"><span>3. จำแนก WFNS และกลุ่มการดูแลได้</span></label>
+ <label class="option"><input type="checkbox"><span>4. ติดตาม Neurological status ตามความถี่ที่กำหนด</span></label>
+ <label class="option"><input type="checkbox"><span>5. ติดตาม Airway / Breathing / Circulation ตามความรุนแรง</span></label>
+ <label class="option"><input type="checkbox"><span>6. เฝ้าระวัง Pain / N/V / Seizure / EVD ตามข้อบ่งชี้</span></label>
+ <label class="option"><input type="checkbox"><span>7. ตรวจพบ Red Flag และดำเนินการได้ทันที</span></label>
+ <label class="option"><input type="checkbox"><span>8. เมื่อทรุดมีการแจ้งศูนย์รับส่งต่อ</span></label>
+ <label class="option"><input type="checkbox"><span>9. บันทึก Intervention และ Response</span></label>
+ <label class="option"><input type="checkbox"><span>10. ข้อมูลต่อเนื่อง Pre-transfer → Transfer → Arrival ER</span></label>
+ <label class="option"><input type="checkbox"><span>11. Handover ครบถ้วน</span></label>
+ <label class="option"><input type="checkbox"><span>12. ให้ข้อมูลผู้ป่วย/ครอบครัวตามความเหมาะสม</span></label>
+</div>
 
-<b>หมายเหตุทางคลินิก</b><br>
+<div class="card">
+ <h3>ผลลัพธ์การดูแล</h3>
 
-WFNS I–III + Stable:
-ประเมินอย่างน้อยทุก 30 นาที<br>
+ <label class="title">Neurological status เมื่อถึง ER</label>
+ <select>
+  <option>คงที่จาก Baseline</option><option>ดีขึ้น</option><option>ทรุดลง</option>
+ </select>
 
-WFNS IV–V หรือ Unstable/Deterioration:
-ประเมินทุก 15 นาทีขณะยังไม่คงที่
-และเมื่อคงที่ประเมินทุก 30 นาที<br>
+ <label class="title">Rebleeding ระหว่างส่งต่อ</label>
+ <select><option>ไม่พบ</option><option>สงสัย</option><option>พบ</option></select>
 
-<b>
-หากพบอาการเปลี่ยนแปลง
-ประเมินซ้ำทันทีโดยไม่รอรอบถัดไป
-</b>
+ <label class="title">Seizure</label>
+ <select><option>ไม่พบ</option><option>พบ</option></select>
 
+ <label class="title">Urgent intervention เมื่อถึง ER</label>
+ <select><option>ไม่มี</option><option>มี</option></select>
+
+ <label class="title">Handover completeness</label>
+ <select><option>ครบถ้วน</option><option>ไม่ครบถ้วน</option></select>
+</div>
+
+<button class="btn secondary noPrint" onclick="closeAdmin()">← กลับหน้าพยาบาล</button>
+</section>
+
+<div class="card">
+ <div class="small" style="text-align:center">
+  <b>Clinical note:</b> WFNS I–III + Stable ประเมินอย่างน้อยทุก 30 นาที •
+  WFNS IV–V หรือ Unstable/Deterioration ประเมินทุก 15 นาทีขณะยังไม่คงที่ •
+  หากอาการเปลี่ยนแปลงให้ประเมินซ้ำทันทีโดยไม่รอรอบถัดไป
+ </div>
+</div>
+
+<div class="noPrint" style="text-align:center">
+ <button class="adminBtn" onclick="openAdmin()">🔒 Admin / การประเมินผลและสถิติ</button>
 </div>
 
 </div>
-
-</div>
-
 
 <script>
+let careGroup=0,wfns="",gcs=0,redFlagOccurred=false;
 
-let careGroup=0;
-let wfns="";
-let gcs=0;
-
-
-/* =========================
-   CALCULATE
-========================= */
-
-function calculate(){
-
- const E=parseInt(document.getElementById("E").value);
- const V=parseInt(document.getElementById("V").value);
- const M=parseInt(document.getElementById("M").value);
-
- if(!E || !V || !M){
-  return;
- }
+/* ---------- classification ---------- */
+function classify(){
+ const E=+document.getElementById("E").value;
+ const V=+document.getElementById("V").value;
+ const M=+document.getElementById("M").value;
+ if(!E||!V||!M) return;
 
  gcs=E+V+M;
+ const motor=document.querySelector('input[name="motor"]:checked').value==="yes";
+ const unstable=document.querySelector('input[name="condition"]:checked').value==="unstable";
 
- const motor=
- document.querySelector(
- 'input[name="motor"]:checked'
- ).value==="yes";
+ if(gcs===15&&!motor) wfns="I";
+ else if(gcs>=13&&gcs<=14&&!motor) wfns="II";
+ else if(gcs>=13&&gcs<=14&&motor) wfns="III";
+ else if(gcs>=7&&gcs<=12) wfns="IV";
+ else wfns="V";
 
- const unstable=
- document.querySelector(
- 'input[name="condition"]:checked'
- ).value==="unstable";
+ const r=document.getElementById("classResult");
+ const gr=document.getElementById("groupResult");
 
-
- if(gcs===15 && !motor){
-  wfns="I";
+ if(wfns==="IV"||wfns==="V"||unstable){
+  careGroup=2;
+  r.className="result orange";
+  r.innerHTML=`GCS <b>E${E} V${V} M${M} = ${gcs}/15</b><br>
+  WFNS <b>${wfns}</b><br>🟠 <b>กลุ่มที่ 2 — เฝ้าระวังเข้มข้น</b>`;
+  gr.className="result orange";
+  gr.innerHTML=`🟠 <b>กลุ่มที่ 2</b> | GCS ${gcs} | WFNS ${wfns}<br>
+  ประเมินทุก <b>15 นาทีขณะอาการยังไม่คงที่</b>`;
+  document.getElementById("group1").classList.add("hidden");
+  document.getElementById("group2").classList.remove("hidden");
+ }else{
+  careGroup=1;
+  r.className="result green";
+  r.innerHTML=`GCS <b>E${E} V${V} M${M} = ${gcs}/15</b><br>
+  WFNS <b>${wfns}</b><br>🟢 <b>กลุ่มที่ 1 — Stable</b>`;
+  gr.className="result green";
+  gr.innerHTML=`🟢 <b>กลุ่มที่ 1</b> | GCS ${gcs} | WFNS ${wfns}<br>
+  ประเมินอย่างน้อยทุก <b>30 นาที</b>`;
+  document.getElementById("group2").classList.add("hidden");
+  document.getElementById("group1").classList.remove("hidden");
  }
-
- else if(gcs>=13 && gcs<=14 && !motor){
-  wfns="II";
- }
-
- else if(gcs>=13 && gcs<=14 && motor){
-  wfns="III";
- }
-
- else if(gcs>=7 && gcs<=12){
-  wfns="IV";
- }
-
- else if(gcs>=3 && gcs<=6){
-  wfns="V";
- }
-
-
- if(
- wfns==="IV" ||
- wfns==="V" ||
- unstable
- ){
-
- careGroup=2;
-
- document.getElementById("classification")
- .className="result orange";
-
- document.getElementById("classification")
- .innerHTML=
-
- `GCS E${E} V${V} M${M}
- = <b>${gcs}/15</b><br>
-
- WFNS Grade <b>${wfns}</b><br>
-
- 🟠 <b>กลุ่มที่ 2</b><br>
-
- WFNS IV–V หรือ
- Unstable / Neurological deterioration<br>
-
- <b>เฝ้าระวังเข้มข้น</b>`;
-
-
- document.getElementById("groupResult")
- .className="result orange";
-
- document.getElementById("groupResult")
- .innerHTML=
-
- `🟠 <b>กลุ่มที่ 2</b><br>
- GCS ${gcs} / WFNS ${wfns}<br>
- ประเมินทุก 15 นาที
- ขณะอาการยังไม่คงที่`;
-
-
- document.getElementById("group1")
- .classList.add("hidden");
-
- document.getElementById("group2")
- .classList.remove("hidden");
-
- }
-
- else{
-
- careGroup=1;
-
- document.getElementById("classification")
- .className="result green";
-
- document.getElementById("classification")
- .innerHTML=
-
- `GCS E${E} V${V} M${M}
- = <b>${gcs}/15</b><br>
-
- WFNS Grade <b>${wfns}</b><br>
-
- 🟢 <b>กลุ่มที่ 1</b><br>
-
- WFNS I–III + Clinical stable<br>
-
- <b>ประเมินอย่างน้อยทุก 30 นาที</b>`;
-
-
- document.getElementById("groupResult")
- .className="result green";
-
- document.getElementById("groupResult")
- .innerHTML=
-
- `🟢 <b>กลุ่มที่ 1</b><br>
- GCS ${gcs} / WFNS ${wfns}<br>
- ประเมินอย่างน้อยทุก 30 นาที`;
-
-
- document.getElementById("group2")
- .classList.add("hidden");
-
- document.getElementById("group1")
- .classList.remove("hidden");
-
- }
-
- saveData();
-
+ save();
 }
 
+/* ---------- details ---------- */
+function detail(box,id){
+ document.getElementById(id).classList.toggle("show",box.checked);
+ save();
+}
+function toggleGuide(){
+ document.getElementById("travelGuide").classList.toggle("show");
+}
 
-/* =========================
-   CHANGE PHASE
-========================= */
-
-function nextPhase(n){
-
- saveData();
-
- document.querySelectorAll(".phase")
- .forEach(p=>p.classList.remove("active"));
-
- document.getElementById("phase"+n)
- .classList.add("active");
-
+/* ---------- pages ---------- */
+function go(n){
+ save();
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+ document.getElementById("page"+n).classList.add("active");
 
  for(let i=1;i<=3;i++){
-
-  const step=document.getElementById("step"+i);
-
-  step.classList.remove("active");
-
-  if(i<n){
-   step.classList.add("done");
-  }
-
-  if(i===n){
-   step.classList.add("active");
-  }
-
+  const s=document.getElementById("s"+i);
+  s.classList.remove("active","done");
+  if(i<n)s.classList.add("done");
+  if(i===n)s.classList.add("active");
  }
-
- window.scrollTo({
-  top:0,
-  behavior:"smooth"
- });
-
+ window.scrollTo({top:0,behavior:"smooth"});
 }
 
+/* ---------- rows ---------- */
+function gcsOptions(){
+ let x="";
+ for(let i=15;i>=3;i--)x+=`<option>${i}</option>`;
+ return x;
+}
+function transferRowHTML(){
+ return `<tr>
+ <td><input type="time"></td>
+ <td><select>${gcsOptions()}</select></td>
+ <td><select><option>ปกติ</option><option>ผิดปกติ</option></select></td>
+ <td><select><option>คงเดิม</option><option>ดีขึ้น</option><option>แย่ลง</option></select></td>
+ <td><input placeholder="BP"></td>
+ <td><input type="number"></td><td><input type="number"></td><td><input type="number"></td>
+ <td><select><option>คงที่</option><option>ปวดศีรษะ</option>
+ <option>N/V</option><option>ชัก</option><option>ทรุดลง</option></select></td>
+ </tr>`;
+}
+function erRowHTML(){
+ return `<tr>
+ <td><input type="time"></td>
+ <td><select>${gcsOptions()}</select></td>
+ <td><select><option>ปกติ</option><option>ผิดปกติ</option></select></td>
+ <td><select><option>คงเดิม</option><option>ดีขึ้น</option><option>แย่ลง</option></select></td>
+ <td><input placeholder="BP"></td>
+ <td><input type="number"></td><td><input type="number"></td><td><input type="number"></td>
+ <td><select><option>Stable</option><option>Improved</option>
+ <option>Deteriorated</option><option>Red Flag</option></select></td>
+ </tr>`;
+}
+function addTransferRow(){
+ document.getElementById("transferRows").insertAdjacentHTML("beforeend",transferRowHTML());
+}
+function addERRow(){
+ document.getElementById("erRows").insertAdjacentHTML("beforeend",erRowHTML());
+}
 
-/* =========================
-   RED FLAG
-========================= */
-
+/* ---------- red flag ---------- */
 function redFlag(){
-
- document.getElementById("redBox")
- .classList.remove("hidden");
-
- document.getElementById("group1")
- .classList.add("hidden");
-
- document.getElementById("group2")
- .classList.remove("hidden");
-
-
- document.getElementById("groupResult")
- .className="result red";
-
- document.getElementById("groupResult")
- .innerHTML=
-
- `🚨 <b>RED FLAG / DETERIORATION</b><br>
- เพิ่มความเข้มข้นการเฝ้าระวังทันที<br>
- <b>ประเมิน ABC + Neuro ซ้ำ
- และแจ้งศูนย์รับ–ส่งต่อทันที</b>`;
-
-
- document.getElementById("redBox")
- .scrollIntoView({
-  behavior:"smooth"
- });
-
+ redFlagOccurred=true;
+ document.getElementById("redBox").classList.remove("hidden");
+ document.getElementById("group1").classList.add("hidden");
+ document.getElementById("group2").classList.remove("hidden");
+ const gr=document.getElementById("groupResult");
+ gr.className="result red";
+ gr.innerHTML="🚨 <b>RED FLAG / DETERIORATION</b><br>ABC + Neuro ซ้ำทันที → ช่วยเหลือ → แจ้งศูนย์รับส่งต่อ";
+ document.getElementById("redBox").scrollIntoView({behavior:"smooth"});
+ save();
 }
 
-
-/* =========================
-   PRINT ONE PHASE
-========================= */
-
-function printPhase(n){
-
- document.querySelectorAll(".phase")
- .forEach(p=>
- p.classList.remove("printing")
- );
-
- document.getElementById("phase"+n)
- .classList.add("printing");
-
+/* ---------- print ---------- */
+function printPage(n){
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("printing"));
+ document.getElementById("page"+n).classList.add("printing");
  window.print();
-
- setTimeout(()=>{
-
- document.getElementById("phase"+n)
- .classList.remove("printing");
-
- },500);
-
+ setTimeout(()=>document.getElementById("page"+n).classList.remove("printing"),400);
 }
-
-
-/* =========================
-   PRINT ALL
-========================= */
-
 function printAll(){
-
- document.querySelectorAll(".phase")
- .forEach(p=>
- p.classList.add("printing")
- );
-
+ [1,2,3].forEach(n=>document.getElementById("page"+n).classList.add("printing"));
  window.print();
-
- setTimeout(()=>{
-
- document.querySelectorAll(".phase")
- .forEach(p=>
- p.classList.remove("printing")
- );
-
- },500);
-
+ setTimeout(()=>[1,2,3].forEach(n=>document.getElementById("page"+n).classList.remove("printing")),400);
 }
 
+/* ---------- prototype statistics ---------- */
+function completeCase(){
+ let st=JSON.parse(localStorage.getItem("asahStats")||
+ '{"total":0,"g1":0,"g2":0,"red":0}');
+ st.total++;
+ if(careGroup===1)st.g1++;
+ if(careGroup===2)st.g2++;
+ if(redFlagOccurred)st.red++;
+ localStorage.setItem("asahStats",JSON.stringify(st));
+ updateStats();
+ alert("บันทึกสถิติของเคสในอุปกรณ์นี้แล้ว");
+}
+function updateStats(){
+ const st=JSON.parse(localStorage.getItem("asahStats")||
+ '{"total":0,"g1":0,"g2":0,"red":0}');
+ document.getElementById("stTotal").textContent=st.total;
+ document.getElementById("stG1").textContent=st.g1;
+ document.getElementById("stG2").textContent=st.g2;
+ document.getElementById("stRed").textContent=st.red;
+}
 
-/* =========================
-   AUTO SAVE
-========================= */
+/* PIN นี้เป็นเพียงการซ่อนหน้าต้นแบบ ไม่ใช่ authentication */
+function openAdmin(){
+ const pin=prompt("Admin PIN");
+ if(pin!=="3455"){alert("PIN ไม่ถูกต้อง");return;}
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+ document.getElementById("adminPage").classList.add("active");
+ updateStats();window.scrollTo(0,0);
+}
+function closeAdmin(){go(3)}
 
-function saveData(){
-
- const data={};
-
- document.querySelectorAll(
- "input,select,textarea"
- ).forEach((el,index)=>{
-
-  if(el.type==="checkbox" ||
-     el.type==="radio"){
-
-   data[index]=el.checked;
-
-  }else{
-
-   data[index]=el.value;
-
-  }
-
+/* ---------- local draft autosave ---------- */
+function save(){
+ const data=[];
+ document.querySelectorAll("input,select,textarea").forEach((el,i)=>{
+  data[i]=(el.type==="checkbox"||el.type==="radio")?el.checked:el.value;
  });
-
- localStorage.setItem(
- "asahTransferData",
- JSON.stringify(data)
- );
-
+ localStorage.setItem("asahDraft",JSON.stringify(data));
 }
-
-
-/* =========================
-   RESTORE DATA
-========================= */
-
-function restoreData(){
-
- const saved=
- localStorage.getItem(
- "asahTransferData"
- );
-
- if(!saved) return;
-
- const data=JSON.parse(saved);
-
- document.querySelectorAll(
- "input,select,textarea"
- ).forEach((el,index)=>{
-
-  if(data[index]===undefined) return;
-
-  if(el.type==="checkbox" ||
-     el.type==="radio"){
-
-   el.checked=data[index];
-
-  }else{
-
-   el.value=data[index];
-
-  }
-
+function restore(){
+ const raw=localStorage.getItem("asahDraft");
+ if(!raw)return;
+ const data=JSON.parse(raw);
+ document.querySelectorAll("input,select,textarea").forEach((el,i)=>{
+  if(data[i]===undefined)return;
+  if(el.type==="checkbox"||el.type==="radio")el.checked=data[i];
+  else el.value=data[i];
  });
-
- calculate();
-
+ document.querySelectorAll(".detail").forEach(x=>x.classList.remove("show"));
+ classify();
 }
 
-
-/* =========================
-   AUTO SAVE WHEN CLICK
-========================= */
-
-document.addEventListener(
- "change",
- saveData
-);
-
-window.addEventListener(
- "load",
- restoreData
-);
-
+document.addEventListener("change",save);
+window.addEventListener("load",()=>{
+ addTransferRow();addERRow();
+ restore();updateStats();
+});
 </script>
 
 </body>
