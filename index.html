@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aSAH Nursing Transfer</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Tahoma","Noto Sans Thai",Arial,sans-serif;
+  background:#f4f8fb;
+  color:#17324d;
+}
+header{
+  background:linear-gradient(135deg,#0b4f71,#1488a8);
+  color:white;
+  padding:24px 18px;
+}
+header h1{margin:0;font-size:26px}
+header p{margin:8px 0 0;line-height:1.6}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:18px;
+}
+
+.notice{
+  background:#eaf7fb;
+  border-left:5px solid #1488a8;
+  padding:14px;
+  margin-bottom:18px;
+  border-radius:8px;
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.tabs button{
+  border:0;
+  background:#dce9ef;
+  color:#17324d;
+  padding:11px 14px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.tabs button.active{
+  background:#0b6788;
+  color:white;
+}
+
+.page{display:none}
+.page.active{display:block}
+
+.card{
+  background:white;
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.card h2{
+  margin-top:0;
+  color:#075b7a;
+}
+.card h3{
+  color:#0b6788;
+  margin-bottom:10px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+label{
+  font-weight:bold;
+  font-size:14px;
+  display:block;
+  margin-bottom:5px;
+}
+input,select,textarea{
+  width:100%;
+  padding:10px;
+  border:1px solid #b8cbd5;
+  border-radius:7px;
+  font-size:15px;
+  background:white;
+}
+textarea{min-height:75px}
+
+.check{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  padding:8px 0;
+  border-bottom:1px solid #edf1f3;
+}
+.check input{
+  width:auto;
+  margin-top:4px;
+}
+
+.group1{
+  border-left:6px solid #3fa56b;
+}
+.group2{
+  border-left:6px solid #e29a2d;
+}
+.red{
+  border-left:6px solid #d84545;
+  background:#fff7f7;
+}
+
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:20px;
+  font-weight:bold;
+}
+.green{background:#dff5e7;color:#176b3a}
+.orange{background:#fff0d5;color:#9a5c00}
+.danger{background:#ffe0e0;color:#a01f1f}
+
+.result{
+  padding:15px;
+  border-radius:10px;
+  background:#eef7fa;
+  margin-top:12px;
+  font-weight:bold;
+  line-height:1.7;
+}
+
+.btn{
+  background:#08779b;
+  color:white;
+  border:0;
+  padding:11px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.btn.redbtn{background:#c43d3d}
+.btn.gray{background:#687b86}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+th,td{
+  border:1px solid #ccd9df;
+  padding:9px;
+  vertical-align:top;
+}
+th{
+  background:#e9f3f7;
+}
+
+.small{font-size:13px;color:#526a76}
+.footer{
+  text-align:center;
+  color:#607784;
+  font-size:12px;
+  padding:25px;
+}
+
+@media(max-width:700px){
+  .grid,.grid3{grid-template-columns:1fr}
+  header h1{font-size:21px}
+  .container{padding:10px}
+}
+@media print{
+  .tabs,.no-print{display:none!important}
+  .page{display:block!important}
+  body{background:white}
+  .card{box-shadow:none;border:1px solid #ccc}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>aSAH Nursing Transfer & Neurological Monitoring</h1>
+  <p>
+    แนวปฏิบัติการพยาบาลเพื่อเฝ้าระวังการทรุดลงทางระบบประสาท
+    ในผู้ป่วย Aneurysmal Subarachnoid Hemorrhage
+    ที่ได้รับการส่งต่อระหว่างโรงพยาบาลก่อน definitive aneurysm treatment
+  </p>
+</header>
+
+<div class="container">
+
+<div class="notice">
+  <b>เป้าหมาย:</b>
+  เชื่อมโยงข้อมูล Pre-transfer baseline → Interhospital transfer →
+  Arrival ER เพื่อให้ตรวจพบ neurological deterioration และ Red Flags
+  ได้อย่างรวดเร็ว
+</div>
+
+<div class="tabs no-print">
+  <button class="active" onclick="showPage(0,this)">ข้อมูลผู้ป่วย</button>
+  <button onclick="showPage(1,this)">WFNS</button>
+  <button onclick="showPage(2,this)">ระยะที่ 1</button>
+  <button onclick="showPage(3,this)">ระยะที่ 2</button>
+  <button onclick="showPage(4,this)">ระยะที่ 3</button>
+  <button onclick="showPage(5,this)">Red Flags</button>
+  <button onclick="showPage(6,this)">Handover</button>
+  <button onclick="showPage(7,this)">สรุป/บันทึก</button>
+</div>
+
+<!-- PATIENT -->
+<section class="page active">
+<div class="card">
+<h2>ข้อมูลผู้ป่วย</h2>
+
+<div class="grid">
+<div>
+<label>HN</label>
+<input id="hn">
+</div>
+
+<div>
+<label>ชื่อ–สกุล / Patient ID</label>
+<input id="patient">
+</div>
+
+<div>
+<label>อายุ (ปี)</label>
+<input type="number" id="age">
+</div>
+
+<div>
+<label>โรงพยาบาลต้นทาง</label>
+<input id="origin">
+</div>
+
+<div>
+<label>เวลารับประสาน</label>
+<input type="datetime-local" id="contacttime">
+</div>
+
+<div>
+<label>เวลาคาดว่าจะถึง</label>
+<input type="datetime-local" id="eta">
+</div>
+</div>
+
+<h3>Diagnosis / Aneurysm</h3>
+<textarea id="diagnosis"
+placeholder="เช่น aSAH, aneurysm location, CT/CTA findings"></textarea>
+</div>
+
+<div class="card">
+<h2>Pre-transfer Neurological Baseline</h2>
+
+<div class="grid3">
+<div>
+<label>Eye (E)</label>
+<select id="eye" onchange="calculateGCS()">
+<option value="">เลือก</option>
+<option value="4">4 – Spontaneous</option>
+<option value="3">3 – To speech</option>
+<option value="2">2 – To pain</option>
+<option value="1">1 – None</option>
+</select>
+</div>
+
+<div>
+<label>Verbal (V)</label>
+<select id="verbal" onchange="calculateGCS()">
+<option value="">เลือก</option>
+<option value="5">5 – Oriented</option>
+<option value="4">4 – Confused</option>
+<option value="3">3 – Inappropriate words</option>
+<option value="2">2 – Incomprehensible sounds</option>
+<option value="1">1 – None</option>
+</select>
+</div>
+
+<div>
+<label>Motor (M)</label>
+<select id="motorGCS" onchange="calculateGCS()">
+<option value="">เลือก</option>
+<option value="6">6 – Obeys commands</option>
+<option value="5">5 – Localizes pain</option>
+<option value="4">4 – Withdraws</option>
+<option value="3">3 – Abnormal flexion</option>
+<option value="2">2 – Extension</option>
+<option value="1">1 – None</option>
+</select>
+</div>
+</div>
+
+<div id="gcsResult" class="result">
+GCS = ยังไม่ได้ประเมิน
+</div>
+
+<div class="grid" style="margin-top:12px">
+<div>
+<label>Pupil</label>
+<input id="pupil" placeholder="เช่น 3 mm RTLBE / unequal">
+</div>
+
+<div>
+<label>Motor deficit</label>
+<select id="deficit" onchange="calculateWFNS()">
+<option value="no">ไม่มี</option>
+<option value="yes">มี</option>
+</select>
+</div>
+
+<div>
+<label>Motor power</label>
+<input id="power" placeholder="RUE/RLE/LUE/LLE">
+</div>
+
+<div>
+<label>อาการทางระบบประสาทอื่น</label>
+<input id="neuroOther">
+</div>
+</div>
+</div>
+</section>
+
+<!-- WFNS -->
+<section class="page">
+<div class="card">
+<h2>WFNS Grade I–V</h2>
+
+<table>
+<tr>
+<th>WFNS</th>
+<th>GCS</th>
+<th>Motor deficit</th>
+</tr>
+<tr><td>I</td><td>15</td><td>ไม่มี</td></tr>
+<tr><td>II</td><td>13–14</td><td>ไม่มี</td></tr>
+<tr><td>III</td><td>13–14</td><td>มี</td></tr>
+<tr><td>IV</td><td>7–12</td><td>มี/ไม่มี</td></tr>
+<tr><td>V</td><td>3–6</td><td>มี/ไม่มี</td></tr>
+</table>
+
+<button class="btn" onclick="calculateWFNS()">คำนวณ WFNS</button>
+
+<div id="wfnsResult" class="result">
+กรุณากรอก GCS และ Motor deficit
+</div>
+</div>
+
+<div class="card">
+<h2>Clinical condition</h2>
+
+<div class="check">
+<input type="checkbox" class="unstable" onchange="calculateWFNS()">
+<span>Neurological deterioration</span>
+</div>
+
+<div class="check">
+<input type="checkbox" class="unstable" onchange="calculateWFNS()">
+<span>Airway instability</span>
+</div>
+
+<div class="check">
+<input type="checkbox" class="unstable" onchange="calculateWFNS()">
+<span>Breathing instability</span>
+</div>
+
+<div class="check">
+<input type="checkbox" class="unstable" onchange="calculateWFNS()">
+<span>Circulation instability</span>
+</div>
+
+<div id="careGroup" class="result">
+ยังไม่ได้จำแนกกลุ่มการดูแล
+</div>
+</div>
+</section>
+
+<!-- PHASE 1 -->
+<section class="page">
+<div class="card">
+<h2>ระยะที่ 1: การรับข้อมูล ประเมิน และเตรียมความพร้อมก่อนส่งต่อ</h2>
+<p class="small">Pre-transfer Assessment and Preparation</p>
+
+<h3>1. รับและประเมินข้อมูลจากโรงพยาบาลต้นทาง</h3>
+
+<div class="check"><input type="checkbox"><span>GCS แยก E–V–M</span></div>
+<div class="check"><input type="checkbox"><span>Pupil response</span></div>
+<div class="check"><input type="checkbox"><span>Motor function / motor deficit</span></div>
+<div class="check"><input type="checkbox"><span>BP, HR, RR, SpO₂</span></div>
+<div class="check"><input type="checkbox"><span>Airway / ventilation / oxygen</span></div>
+<div class="check"><input type="checkbox"><span>IV access</span></div>
+<div class="check"><input type="checkbox"><span>ยาและสารน้ำที่ได้รับ</span></div>
+<div class="check"><input type="checkbox"><span>EVD/Ventriculostomy (ถ้ามี)</span></div>
+
+<h3>2. ประเมินความรุนแรง</h3>
+<div class="check"><input type="checkbox"><span>ประเมิน WFNS Grade I–V</span></div>
+<div class="check"><input type="checkbox"><span>จำแนกกลุ่มการดูแลตาม WFNS + clinical condition</span></div>
+
+<h3>3. ส่งแนวทางการดูแลแก่ทีมส่งต่อ</h3>
+<div class="check"><input type="checkbox"><span>Neurological monitoring</span></div>
+<div class="check"><input type="checkbox"><span>Airway / Breathing</span></div>
+<div class="check"><input type="checkbox"><span>Circulation / BP</span></div>
+<div class="check"><input type="checkbox"><span>Rebleeding prevention</span></div>
+<div class="check"><input type="checkbox"><span>IV / Fluid / Medication</span></div>
+<div class="check"><input type="checkbox"><span>EVD care</span></div>
+<div class="check"><input type="checkbox"><span>Seizure monitoring</span></div>
+
+<h3>4. ตรวจสอบความพร้อมก่อนออกเดินทาง</h3>
+<div class="check"><input type="checkbox"><span>O₂ และอุปกรณ์ช่วยหายใจพร้อม</span></div>
+<div class="check"><input type="checkbox"><span>Monitor / BP / SpO₂ พร้อม</span></div>
+<div class="check"><input type="checkbox"><span>Suction และอุปกรณ์ช่วยชีวิตพร้อม</span></div>
+<div class="check"><input type="checkbox"><span>ยา/สารน้ำพร้อม</span></div>
+<div class="check"><input type="checkbox"><span>EVD ปลอดภัยและตรวจระบบแล้ว</span></div>
+
+<h3>5. ประสานทีมปลายทาง</h3>
+<div class="check"><input type="checkbox"><span>แจ้ง ER</span></div>
+<div class="check"><input type="checkbox"><span>แจ้งทีมประสาทศัลยศาสตร์/ทีมที่เกี่ยวข้อง</span></div>
+<div class="check"><input type="checkbox"><span>ส่ง baseline + WFNS + V/S + EVD + Treatment + ETA</span></div>
+
+<label style="margin-top:12px">บันทึกเพิ่มเติม</label>
+<textarea></textarea>
+</div>
+</section>
+
+<!-- PHASE 2 -->
+<section class="page">
+<div class="card group1">
+<h2>ระยะที่ 2 — กลุ่มที่ 1</h2>
+<span class="badge green">WFNS I–III + Clinical Stable</span>
+
+<h3>Neurological</h3>
+<div class="check"><input type="checkbox"><span>GCS E–V–M, Pupil, Motor ทุก 30 นาที</span></div>
+
+<h3>Airway & Breathing</h3>
+<div class="check"><input type="checkbox"><span>Airway, RR, SpO₂ ทุก 30 นาที</span></div>
+
+<h3>Circulation</h3>
+<div class="check"><input type="checkbox"><span>BP และ HR ทุก 30 นาที</span></div>
+
+<h3>Rebleeding / Pain / Nausea / Vomiting</h3>
+<div class="check"><input type="checkbox"><span>ประเมินปวดศีรษะ คลื่นไส้ อาเจียน ทุก 30 นาที</span></div>
+<div class="check"><input type="checkbox"><span>ลดสิ่งกระตุ้นและการเคลื่อนไหวที่ไม่จำเป็น</span></div>
+
+<h3>IV / Fluid / Medication</h3>
+<div class="check"><input type="checkbox"><span>ตรวจ IV ยา และสารน้ำทุก 30 นาที</span></div>
+
+<h3>EVD</h3>
+<div class="check"><input type="checkbox"><span>ตรวจระบบก่อนออกเดินทาง หลังขึ้นรถ และหลังเคลื่อนย้าย/เปลี่ยนท่า</span></div>
+
+<h3>Seizure</h3>
+<div class="check"><input type="checkbox"><span>เฝ้าระวังอาการชักตลอดการส่งต่อ</span></div>
+
+<h3>Communication</h3>
+<div class="check"><input type="checkbox"><span>แจ้งเมื่ออาการเปลี่ยนแปลงและก่อนถึงโรงพยาบาล</span></div>
+</div>
+
+<div class="card group2">
+<h2>ระยะที่ 2 — กลุ่มที่ 2</h2>
+<span class="badge orange">WFNS IV–V หรือ Unstable / Deterioration</span>
+
+<div class="check"><input type="checkbox"><span>GCS E–V–M, Pupil, Motor ทุก 15 นาทีขณะอาการไม่คงที่</span></div>
+<div class="check"><input type="checkbox"><span>เมื่ออาการคงที่ → ประเมินทุก 30 นาที</span></div>
+<div class="check"><input type="checkbox"><span>Airway และ RR ทุก 15 นาที + Continuous SpO₂</span></div>
+<div class="check"><input type="checkbox"><span>BP ทุก 15 นาที + ECG/HR ต่อเนื่องเมื่อมีอุปกรณ์</span></div>
+<div class="check"><input type="checkbox"><span>ประเมินปวดศีรษะ คลื่นไส้ อาเจียน ทุก 15 นาทีขณะไม่คงที่</span></div>
+<div class="check"><input type="checkbox"><span>ตรวจ IV / ยา / สารน้ำ ทุก 15 นาทีขณะไม่คงที่</span></div>
+<div class="check"><input type="checkbox"><span>ตรวจ EVD และตรวจทันทีเมื่อ Neuro เปลี่ยน</span></div>
+<div class="check"><input type="checkbox"><span>เฝ้าระวัง Seizure / Consciousness อย่างต่อเนื่อง</span></div>
+<div class="check"><input type="checkbox"><span>พบ Red Flag → แจ้งศูนย์รับ–ส่งต่อทันที</span></div>
+</div>
+</section>
+
+<!-- PHASE 3 -->
+<section class="page">
+<div class="card">
+<h2>ระยะที่ 3: Arrival at Emergency Department</h2>
+
+<h3>Immediate assessment</h3>
+<div class="check"><input type="checkbox"><span>ABCDE ทันที</span></div>
+<div class="check"><input type="checkbox"><span>BP, HR, RR, SpO₂ ทันที</span></div>
+<div class="check"><input type="checkbox"><span>GCS E–V–M, Pupil, Motor ทันที</span></div>
+<div class="check"><input type="checkbox"><span>เปรียบเทียบ Pre-transfer → Transfer → Arrival ER</span></div>
+<div class="check"><input type="checkbox"><span>ประเมิน WFNS ซ้ำ</span></div>
+<div class="check"><input type="checkbox"><span>ประเมิน rebleeding / seizure / hydrocephalus / EVD dysfunction</span></div>
+</div>
+
+<div class="card group1">
+<h2>WFNS I–III + Stable</h2>
+<div class="check"><input type="checkbox"><span>Neuro อย่างน้อยทุก 30 นาที</span></div>
+<div class="check"><input type="checkbox"><span>Airway/RR/SpO₂ อย่างน้อยทุก 30 นาที</span></div>
+<div class="check"><input type="checkbox"><span>BP/HR อย่างน้อยทุก 30 นาที</span></div>
+<div class="check"><input type="checkbox"><span>Pain/Nausea/Vomiting อย่างน้อยทุก 30 นาที</span></div>
+<div class="check"><input type="checkbox"><span>ตรวจ IV/ยา/สารน้ำ</span></div>
+<div class="check"><input type="checkbox"><span>ตรวจ EVD หลังเคลื่อนย้าย/เปลี่ยนท่า</span></div>
+<div class="check"><input type="checkbox"><span>เฝ้าระวัง Seizure</span></div>
+</div>
+
+<div class="card group2">
+<h2>WFNS IV–V / Unstable / Deterioration</h2>
+<div class="check"><input type="checkbox"><span>Neuro ทุก 15 นาทีขณะไม่คงที่</span></div>
+<div class="check"><input type="checkbox"><span>Airway/RR ทุก 15 นาที + Continuous SpO₂</span></div>
+<div class="check"><input type="checkbox"><span>BP ทุก 15 นาที + ECG/HR continuous</span></div>
+<div class="check"><input type="checkbox"><span>Pain/Nausea/Vomiting ทุก 15 นาทีขณะไม่คงที่</span></div>
+<div class="check"><input type="checkbox"><span>IV/ยา/สารน้ำทุก 15 นาทีขณะไม่คงที่</span></div>
+<div class="check"><input type="checkbox"><span>ตรวจ EVD ทันทีเมื่อ neurological status เปลี่ยน</span></div>
+<div class="check"><input type="checkbox"><span>พบ deterioration → แจ้งแพทย์/Neurosurgery ทันที</span></div>
+</div>
+</section>
+
+<!-- RED FLAG -->
+<section class="page">
+<div class="card red">
+<h2>🚨 RED FLAGS</h2>
+
+<div class="check"><input type="checkbox" class="redflag"><span>GCS ลดลงจาก baseline</span></div>
+<div class="check"><input type="checkbox" class="redflag"><span>Pupil เปลี่ยนแปลง / ไม่เท่ากัน</span></div>
+<div class="check"><input type="checkbox" class="redflag"><span>Motor deficit ใหม่หรือแย่ลง</span></div>
+<div class="check"><input type="checkbox" class="redflag"><span>Seizure</span></div>
+<div class="check"><input type="checkbox" class="redflag"><span>SpO₂ ลดลง / Airway problem</span></div>
+<div class="check"><input type="checkbox" class="redflag"><span>BP / Circulation unstable</span></div>
+<div class="check"><input type="checkbox" class="redflag"><span>สงสัย Rebleeding</span></div>
+<div class="check"><input type="checkbox" class="redflag"><span>สงสัย Acute hydrocephalus</span></div>
+
+<button class="btn redbtn" onclick="checkRedFlags()">ประเมิน Red Flags</button>
+
+<div id="redResult" class="result">
+ยังไม่พบข้อมูล Red Flag
+</div>
+
+<h3>เมื่อพบ Red Flag</h3>
+<p>
+<b>ABC + Neuro ซ้ำทันที → ให้การช่วยเหลือตามแผนการรักษา →
+แจ้งศูนย์รับ–ส่งต่อ/แพทย์ทันที → บันทึกเวลา อาการ การช่วยเหลือ และ Response</b>
+</p>
+
+<p>
+หากเดิมอยู่ WFNS I–III แล้วเกิด Red Flag
+ให้เพิ่มความเข้มข้นการดูแลเทียบเท่า WFNS IV–V
+โดยไม่เปลี่ยน WFNS Grade จนกว่าจะประเมิน GCS/Motor ใหม่
+</p>
+</div>
+</section>
+
+<!-- HANDOVER -->
+<section class="page">
+<div class="card">
+<h2>Structured Handover</h2>
+
+<div class="grid">
+<div>
+<label>GCS E–V–M</label>
+<input id="handoverGCS">
+</div>
+
+<div>
+<label>Pupil</label>
+<input id="handoverPupil">
+</div>
+
+<div>
+<label>Motor</label>
+<input id="handoverMotor">
+</div>
+
+<div>
+<label>WFNS</label>
+<input id="handoverWFNS">
+</div>
+
+<div>
+<label>BP / HR</label>
+<input>
+</div>
+
+<div>
+<label>RR / SpO₂</label>
+<input>
+</div>
+
+<div>
+<label>Airway / Ventilation</label>
+<input>
+</div>
+
+<div>
+<label>EVD</label>
+<input>
+</div>
+</div>
+
+<label style="margin-top:12px">การรักษา/ยา/สารน้ำที่ได้รับ</label>
+<textarea></textarea>
+
+<label>การเปลี่ยนแปลงระหว่างส่งต่อ</label>
+<textarea></textarea>
+
+<label>การช่วยเหลือและผลตอบสนอง</label>
+<textarea></textarea>
+
+<label>ข้อมูลที่ให้แก่ผู้ป่วย/ครอบครัว</label>
+<textarea></textarea>
+</div>
+</section>
+
+<!-- SUMMARY -->
+<section class="page">
+<div class="card">
+<h2>สรุป Nursing Record</h2>
+
+<button class="btn" onclick="generateNote()">สร้างข้อความบันทึก</button>
+<button class="btn gray no-print" onclick="window.print()">พิมพ์ / Save PDF</button>
+
+<textarea id="note" style="min-height:260px;margin-top:15px"></textarea>
+</div>
+
+<div class="card">
+<h2>เกณฑ์การประเมินผล</h2>
+
+<div class="check"><input type="checkbox"><span>มี neurological baseline ที่ใช้เปรียบเทียบได้</span></div>
+<div class="check"><input type="checkbox"><span>ได้รับการประเมิน ABC + neurological status ตามระดับความรุนแรง</span></div>
+<div class="check"><input type="checkbox"><span>ตรวจพบ neurological deterioration / Red Flags ได้ทันที</span></div>
+<div class="check"><input type="checkbox"><span>มีการช่วยเหลือ รายงาน/ประสาน และ reassessment</span></div>
+<div class="check"><input type="checkbox"><span>มีข้อมูลต่อเนื่อง Pre-transfer → Transfer → Arrival ER → Response</span></div>
+</div>
+</section>
+
+</div>
+
+<div class="footer">
+Prototype clinical nursing support tool — ใช้ร่วมกับคำสั่งการรักษา
+แนวปฏิบัติของหน่วยงาน และการประเมินทางคลินิก
+</div>
+
+<script>
+let totalGCS = null;
+let currentWFNS = "";
+
+function showPage(index,button){
+  const pages=document.querySelectorAll(".page");
+  const buttons=document.querySelectorAll(".tabs button");
+
+  pages.forEach(p=>p.classList.remove("active"));
+  buttons.forEach(b=>b.classList.remove("active"));
+
+  pages[index].classList.add("active");
+  button.classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function calculateGCS(){
+  const e=parseInt(document.getElementById("eye").value);
+  const v=parseInt(document.getElementById("verbal").value);
+  const m=parseInt(document.getElementById("motorGCS").value);
+
+  if(!e || !v || !m){
+    totalGCS=null;
+    document.getElementById("gcsResult").innerHTML=
+    "GCS = ยังประเมินไม่ครบ";
+    return;
+  }
+
+  totalGCS=e+v+m;
+
+  document.getElementById("gcsResult").innerHTML=
+  `GCS = E${e} V${v} M${m} = <b>${totalGCS}/15</b>`;
+
+  calculateWFNS();
+}
+
+function calculateWFNS(){
+  if(totalGCS===null){
+    document.getElementById("wfnsResult").innerHTML=
+    "กรุณาประเมิน GCS ให้ครบ";
+    return;
+  }
+
+  const deficit=document.getElementById("deficit").value==="yes";
+
+  if(totalGCS===15 && !deficit){
+    currentWFNS="I";
+  }
+  else if(totalGCS>=13 && totalGCS<=14 && !deficit){
+    currentWFNS="II";
+  }
+  else if(totalGCS>=13 && totalGCS<=14 && deficit){
+    currentWFNS="III";
+  }
+  else if(totalGCS>=7 && totalGCS<=12){
+    currentWFNS="IV";
+  }
+  else if(totalGCS>=3 && totalGCS<=6){
+    currentWFNS="V";
+  }
+  else{
+    currentWFNS="ต้องประเมินทางคลินิก";
+  }
+
+  document.getElementById("wfnsResult").innerHTML=
+  `WFNS Grade = <b>${currentWFNS}</b>`;
+
+  const unstable=
+  [...document.querySelectorAll(".unstable")].some(x=>x.checked);
+
+  let group="";
+
+  if(
+    currentWFNS==="IV" ||
+    currentWFNS==="V" ||
+    unstable
+  ){
+    group="กลุ่มที่ 2: WFNS IV–V หรือมี neurological deterioration / ABC instability";
+    document.getElementById("careGroup").className="result danger";
+  }else{
+    group="กลุ่มที่ 1: WFNS I–III และอาการทางคลินิกคงที่";
+    document.getElementById("careGroup").className="result green";
+  }
+
+  document.getElementById("careGroup").innerHTML=group;
+
+  document.getElementById("handoverWFNS").value=currentWFNS;
+
+  const e=document.getElementById("eye").value;
+  const v=document.getElementById("verbal").value;
+  const m=document.getElementById("motorGCS").value;
+
+  if(e&&v&&m){
+    document.getElementById("handoverGCS").value=`E${e} V${v} M${m} = ${totalGCS}`;
+  }
+
+  document.getElementById("handoverPupil").value=
+  document.getElementById("pupil").value;
+
+  document.getElementById("handoverMotor").value=
+  document.getElementById("power").value;
+}
+
+function checkRedFlags(){
+  const flags=[...document.querySelectorAll(".redflag")];
+  const count=flags.filter(x=>x.checked).length;
+
+  if(count>0){
+    document.getElementById("redResult").className="result danger";
+    document.getElementById("redResult").innerHTML=
+    `🚨 พบ Red Flag ${count} รายการ<br>
+    ประเมิน ABC + Neuro ซ้ำทันที ให้การช่วยเหลือตามแผน
+    และแจ้งศูนย์รับ–ส่งต่อ/แพทย์ทันที`;
+  }else{
+    document.getElementById("redResult").className="result green";
+    document.getElementById("redResult").innerHTML=
+    "ไม่พบ Red Flag จากรายการที่ประเมิน";
+  }
+}
+
+function generateNote(){
+  calculateGCS();
+  calculateWFNS();
+
+  const hn=document.getElementById("hn").value || "-";
+  const patient=document.getElementById("patient").value || "-";
+  const origin=document.getElementById("origin").value || "-";
+  const diagnosis=document.getElementById("diagnosis").value || "-";
+
+  const e=document.getElementById("eye").value || "-";
+  const v=document.getElementById("verbal").value || "-";
+  const m=document.getElementById("motorGCS").value || "-";
+  const pupil=document.getElementById("pupil").value || "-";
+  const power=document.getElementById("power").value || "-";
+
+  const unstable=
+  [...document.querySelectorAll(".unstable")].some(x=>x.checked);
+
+  const group=(currentWFNS==="IV" || currentWFNS==="V" || unstable)
+  ? "กลุ่มที่ 2"
+  : "กลุ่มที่ 1";
+
+  const redCount=
+  [...document.querySelectorAll(".redflag")].filter(x=>x.checked).length;
+
+  const text=
+`aSAH NURSING TRANSFER RECORD
+
+HN: ${hn}
+ผู้ป่วย: ${patient}
+โรงพยาบาลต้นทาง: ${origin}
+Diagnosis: ${diagnosis}
+
+PRE-TRANSFER NEUROLOGICAL BASELINE
+GCS E${e} V${v} M${m} = ${totalGCS ?? "-"}
+Pupil: ${pupil}
+Motor power: ${power}
+WFNS Grade: ${currentWFNS || "-"}
+Care classification: ${group}
+
+RED FLAGS
+พบ ${redCount} รายการ
+
+การดูแล:
+ประเมินและเฝ้าระวัง neurological status, airway, breathing,
+circulation, BP, pain/nausea/vomiting, IV/fluid/medication,
+EVD และ seizure ตามระดับความรุนแรง
+พร้อมเปรียบเทียบ neurological status ระหว่าง
+Pre-transfer → Interhospital transfer → Arrival ER
+
+เมื่อพบ neurological deterioration/Red Flag:
+ประเมิน ABC + Neuro ซ้ำทันที ให้การช่วยเหลือตามแผนการรักษา
+รายงาน/ประสานทีมรักษา และประเมินผลตอบสนองซ้ำ
+
+ผู้บันทึก: __________________________
+วันที่/เวลา: ________________________`;
+
+  document.getElementById("note").value=text;
+}
+</script>
+
+</body>
+</html>
